@@ -1,5 +1,7 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 
 :root{
@@ -89,7 +91,7 @@ nav{
     line-height: 90px;
     background: var(--body-color);
     padding-inline: 9vw;
-    transition:.3s;
+    transition: .3s;
     z-index: 100;
 }
 
@@ -121,7 +123,8 @@ nav{
     text-decoration: none;
     color: var(--text-color-second);
     font-weight: 500;
-    padding-inline:20px;
+    padding-inline: 15px;
+    margin-inline: 20px;
 }
 .nav-menu-btn{
     display: none;
@@ -129,4 +132,37 @@ nav{
 .nav-menu-btn i{
     font-size: 28px;
     cursor: pointer;
+}
+
+@media only screen and (max-width: 900px) {
+    .nav-button{
+        display: none;
+    }
+    .nav-menu.responsive{
+        left: 0;
+   }
+    .nav-menu{
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: rgba(255, 255, 255,0.7);
+        backdrop-filter: blur(20px);
+        width: 100%;
+        min-height: 450px;
+        height: 90vh;
+        transition: .3s;
+    }
+    .nav_menu_list{
+        flex-direction: column;
+    }
+    .nav-menu-btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+  
+    
 }
