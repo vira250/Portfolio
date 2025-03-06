@@ -65,7 +65,7 @@ const srLeft = ScrollReveal({
   distance: '80px',
   duration: 2000,
   reset: true
-})
+});
 
 srLeft.reveal('.about-info',{delay: 100})
 srLeft.reveal('.contact-info',{delay: 100})
@@ -76,7 +76,7 @@ const srRight = ScrollReveal({
   distance: '80px',
   duration: 2000,
   reset: true
-})
+});
 
 srRight.reveal('.skills-box',{delay: 100})
 srRight.reveal('.form-control',{delay: 100})
@@ -95,6 +95,25 @@ function scrollActive() {
     }  else {
       document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.remove('active-link')
     }
-  })
+  });
 }
 window.addEventListener('scroll', scrollActive)
+  function sendEmail(){
+    var params ={
+      name:document.getElementById("name1").value,
+      email:document.getElementById("Email").value,
+      msg:document.getElementById("Messag").value,
+    }
+ const serviceID="service_7g6woj6"
+ const templateID="template_lgl4f5p"
+
+ emailjs.send(serviceID,templateID,params).then((res) =>{
+    document.getElementById("name1").value="";
+    document.getElementById("Email").value="";
+    document.getElementById("Message").value="";
+    console.log(res);
+    alert("done");
+  })
+  .catch((err) => console.log(err));
+  }
+
